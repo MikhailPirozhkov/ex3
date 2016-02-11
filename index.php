@@ -1,5 +1,5 @@
 <?php
-switch($_GET['action'])
+switch($_GET['route'])
 {
 	case "view" :
 		require_once("view.php"); 
