@@ -3,4 +3,4 @@ model.php       - описание класса weather
 controller.php  - создание экземпляра класса weather
 view.php        - вывод информмации
 index.php       - простейшая маршрутизация
-.htaccess       - "красивые" адреса, позволяет обращаться по адресам вида "?action=view", а не "index.php?action=view"
+.htaccess       - "красивые" адреса, позволяет обращаться по адресам вида "/view", а не "index.php?route=view"
