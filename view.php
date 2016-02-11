@@ -10,6 +10,11 @@
 
 
 <?php
-	echo $weather."<br>";	
+	echo $weather."<br>";
+	echo $weather->getTemp()."<br>";
+	echo $weather->getType();
+?>
+
+
 </body>
 </html>

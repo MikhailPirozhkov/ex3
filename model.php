@@ -16,7 +16,7 @@ class Weather
 	// выбираем требуемые параметры (город, температура, пиктограмма и тип погоды текстом (облачно, ясно)
 	public function getCity ()
 	{
-		$city=$this->xml->fact->station;
+		$city=$this->xml->forecast->city;
 		return $city;
 	}
 	public function getTemp ()
