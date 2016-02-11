@@ -6,31 +6,36 @@ class Weather
 {
 	// адрес xml файла
 	private  $data_file;
+	private $xml;
 	
 	public function __construct($data_file)
 	{
-		$xml = simplexml_load_file($data_file); // раскладываем xml на массив
+		$this->xml = simplexml_load_file($data_file); // раскладываем xml на массив
 	}
 	
 	// выбираем требуемые параметры (город, температура, пиктограмма и тип погоды текстом (облачно, ясно)
 	public function getCity ()
 	{
-		$city=$xml->fact->station;
+		$city=$this->xml->fact->station;
 		return $city;
 	}
 	public function getTemp ()
 	{
-		$temp=$xml->fact->temperature;
+		$temp=$this->xml->fact->temperature;
 		// Если значение температуры положительно, для наглядности добавляем "+"
 		if ($temp>0) {$temp='+'.$temp;}
 		return $temp;
 	}
 	public function getImage ()
 	{
-		return $xml->fact->image;
+		return $this->xml->fact->image;
 	}
 	public function getType ()
 	{
-		return $xml->fact->weather_type;
+		return $this->xml->fact->weather_type;
+	}
+	public function __toString()
+	{
+		return "Температура воздуха по городу: ".$this->xml->fact->station;
 	}
 }
